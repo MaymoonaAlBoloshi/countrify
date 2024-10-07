@@ -1,11 +1,10 @@
 import './App.css'
-import Header from './layout/Header.jsx';
-import Footer from './layout/Footer.jsx';
+import Layout from './layout/MainLayout';
 
 function App() {  
   return (
     <>
-      <Header/>
+      <Layout/>
      
   
     </>
