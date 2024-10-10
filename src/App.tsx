@@ -1,12 +1,14 @@
 import './App.css'
-import Layout from './layout/MainLayout';
+import MainLayout from './layout/MainLayout.js';
 
 function App() {  
   return (
     <>
-      <Layout/>
-     
-  
+      <MainLayout>
+        <div>
+          
+        </div>
+        </MainLayout>
     </>
   )
 }
