@@ -6,12 +6,12 @@
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #444444;
-  color: #080808;
+  background-color: #1d1c2e;
+  color: #ffffff;
 }
 
 body.dark-mode .card-item {
-  background-color: #444444;
+  background-color: #272635;
   color: #ffffff;
   border-color: #555555;
 }
@@ -19,7 +19,7 @@ body.dark-mode .card-item {
 /* Light Mode */
 body {
   background-color: #e7e4e4;
-  color: #333333;
+  color: #000000;
   width: 100%;
   height: 100%;
   justify-content: center; /* Center the body content */
@@ -34,12 +34,11 @@ body {
   width: 100%;
   z-index: 1000; /* Ensure the header is above other elements */
   background-color: #fff;
-  padding: 20px;
+  padding: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
   display: flex;
   text-align: center; /* Center the header content */
   flex-direction: column;
-
 }
 
 /* Content inside header */
@@ -47,16 +46,15 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  gap:850px;
+  gap: 870px;
   padding: 5px;
   width: 100%; /* Ensures content takes full width */
-  max-width: 2000px; /* Optional: Restrict the width */
-
+  max-width: 1800px; /* Optional: Restrict the width */
 }
 
 /* Dark mode for Header */
 body.dark-mode .header {
-  background-color: #000000;
+  background-color: #383758;
   color: #ffffff;
   box-shadow: 0 2px 5px rgba(199, 196, 196, 0.1); /* Add a shadow for a floating effect */
 }
@@ -90,7 +88,7 @@ body.dark-mode .header {
 
 /* Dark mode button styles */
 body.dark-mode .mode-button {
-  background-color: #000000;
+  background-color: #383758;
   color: white;
 }
 
@@ -107,69 +105,81 @@ input {
   border: 1px solid #c0bebe;
   width: 100%; /* Make the input take up full width */
   min-width: 100px;
-
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
 }
 
 .dark-mode input {
-  background-color: #7c7c7c;
-  color: black;
+  background-color: #383758;
+  color: #8b8a9c;
+  border: 1px solid #1d1c2e;
 }
 
 select {
   background-color: white;
-  color: black;
+  color: #000000;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #c0bebe;
   width: 100%; /* Make the select take up full width */
   min-width: 100px;
+  box-shadow: 0 2px 5px rgba(141, 137, 137, 0.1); /* Add a shadow for a floating effect */
 }
 body.dark-mode input::placeholder {
-  color: #000000; /*black color for dark mode */
+  color: #8b8a9c; /*black color for dark mode */
 }
 
-.dark-mode select{
-  background-color: #7c7c7c;
+.dark-mode select {
+  background-color: #383758;
+  color: #8b8a9c;
+  border: 1px solid #1d1c2e;
 }
 
 /* country grid styles */
 .country-grid {
-  padding: 30px;
+  max-width: 1260px;
+  padding: 20px;
+  padding-left: 8px;
+  padding-bottom: 70px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
+/* Ensure the layout looks good even with one card */
+.country-grid.single-card {
+  grid-template-columns: 1fr;
+  justify-items: center; /* Center the single card */
+}
+
 .country-card {
   background-color: white;
-  margin: 20px;
+  margin: 10px;
+  font-size: 14px;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease;
   padding-top: 0px;
   padding-bottom: 20px;
   border: 1px solid #ccc;
-  width: 100%;  /* Ensure card takes full width in its grid */
+  width: 290px;  /* Fixed width for each card */
+  height: 270px; /* Fixed height for each card */
   display: grid;
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   justify-content: grid-start; /* Align content to the top */
-  }
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
+}
 
-  /* Fix image size in the card */
 .country-card img {
   width: 100%;
-  height: 180px; /* Set a fixed height for the images */
-  margin-top: 0;
-  object-fit: cover; /* Ensure the image fits the container while preserving aspect ratio */
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
-  min-width: 100%;
-  min-height: 180px;
 }
 
 .dark-mode .country-card {
-  background-color: #7c7c7c;
-  border: 1px solid #837777;
+  background-color: #383758;
+  border: 1px solid #1d1c2e;
 }
 
 .country-card:hover {
@@ -179,9 +189,28 @@ body.dark-mode input::placeholder {
 /* Align search input and select in one line */
 .controls {
   display: flex;
-  gap: 890px; /* Space between search input and select */
   margin-top: 100px;
-  margin-left: 50px; /* Adjust position */
+  margin-left: 25px; /* Adjust position */
+  margin-right: 20px;
+  position: relative;
+  gap: 820px; /* Space between search input and select */
+  
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-wrapper input {
+  padding-left: 55px; /* Adjust to make space for the icon */
 }
 
 /* Footer styles */
@@ -198,7 +227,7 @@ body.dark-mode input::placeholder {
 }
 
 body.dark-mode .footer {
-  background-color: #000000;
+  background-color: #383758;
   color: #ffffff;
 }
 
@@ -206,10 +235,18 @@ body.dark-mode .footer {
   .controls {
     flex-direction: row;
   }
+
+  .country-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Default grid layout for larger screens */
+  }
 }
 
 @media (max-width: 768px) {
   .controls {
     flex-direction: column; /* Stack input and select on small screens */
+  }
+
+  .country-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
   }
 }
