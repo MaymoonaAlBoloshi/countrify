@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Card from '../components/Card';
+import CardList from '../components/CardList';
 import { ReactNode } from 'react'; // Use ReactNode for typing children
 
 type Props = {
@@ -13,7 +13,7 @@ function MainLayout({ children }: Props) {
       <Header />
       <main>
         <div>
-        <Card/>
+        <CardList/>
         </div>
       </main>
       <Footer/>
