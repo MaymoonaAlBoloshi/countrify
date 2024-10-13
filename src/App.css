@@ -1,42 +1,289 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1d1c2e;
+  color: #ffffff;
+}
+
+body.dark-mode .card-item {
+  background-color: #272635;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+/* Light Mode */
+body {
+  background-color: #e7e4e4;
+  color: #000000;
+  width: 100%;
+  height: 100%;
+  justify-content: center; /* Center the body content */
+  display: flex;
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header is above other elements */
+  background-color: #fff;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content inside header */
+.header-content {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+  padding: 5px;
+  padding-left: 50px;
+  width: 100%; /* Ensures content takes full width */
+  max-width: 1800px; /* Optional: Restrict the width */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Dark mode for Header */
+body.dark-mode .header {
+  background-color: #383758;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(199, 196, 196, 0.1); /* Add a shadow for a floating effect */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Theme toggle styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.mode-button {
+  color: black;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  margin-right: 100px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.mode-button .icon {
+  margin-right: 2px; /* Space between icon and text */
 }
 
-.read-the-docs {
+.mode-button:hover {
+  background-color: #b9b6b6;
+}
+
+/* Dark mode button styles */
+body.dark-mode .mode-button {
+  background-color: #383758;
+  color: white;
+}
+
+body.dark-mode .mode-button:hover {
+  background-color: #666464;
+}
+
+/* Card Style*/
+input {
+  background-color: white;
+  color: #000000;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #c0bebe;
+  width: 100%; /* Make the input take up full width */
+  min-width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
+}
+
+.dark-mode input {
+  background-color: #383758;
+  color: #8b8a9c;
+  border: 1px solid #1d1c2e;
+}
+
+select {
+  background-color: white;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #c0bebe;
+  width: 100%; /* Make the select take up full width */
+  min-width: 100px;
+  box-shadow: 0 2px 5px rgba(141, 137, 137, 0.1); /* Add a shadow for a floating effect */
+}
+body.dark-mode input::placeholder {
+  color: #8b8a9c; /*black color for dark mode */
+}
+
+.dark-mode select {
+  background-color: #383758;
+  color: #8b8a9c;
+  border: 1px solid #1d1c2e;
+}
+
+/* country grid styles */
+.country-grid {
+  max-width: 1260px;
+  padding: 20px;
+  padding-left: 8px;
+  padding-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Ensure the layout looks good even with one card */
+.country-grid.single-card {
+  grid-template-columns: 1fr;
+  justify-items: center; /* Center the single card */
+}
+
+.country-header {
+  font-size: 16px; /* Adjust the size of the header text */
+  font-weight: bold; /* Make the header bold */
+  text-align: left; /* Align the header text to the left */
+  padding: 2px 15px; /* Add some padding for spacing */
+  color: #333; /* Set text color */
+}
+
+.country-header h2 {
+  margin: 2px 0; /* Remove default margin */
+  font-size: inherit; /* Inherit the font size from the parent */
+  padding-left: 10px;
+}
+
+.dark-mode.country-header h2 {
+  color: #ffffff; /* Set text color */
+}
+
+.country-card p {
+  margin: 2px 0; /* Add vertical spacing between paragraphs */
+  font-size: 14px; /* Set a uniform font size for paragraphs */
+  color: #555; /* Set a color for text */
+  padding-left: 10px;
+}
+/* Dark mode styles for paragraphs */
+.dark-mode .country-header {
+  color: #d1d1d1; /* Light color for text in dark mode */
+}
+
+.dark-mode .country-card p{
+  color: #d1d1d1; /* Light color for text in dark mode */
+}
+.country-card {
+  background-color: white;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  border: 1px solid #ccc;
+  width: 290px;  /* Fixed width for each card */
+  height: 270px; /* Fixed height for each card */
+  display: grid;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: grid-start; /* Align content to the top */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
+}
+
+.country-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.dark-mode .country-card {
+  background-color: #383758;
+  border: 1px solid #1d1c2e;
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Align search input and select in one line */
+.controls {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 25px; /* Adjust position */
+  margin-right: 20px;
+  position: relative;
+  gap: 820px; /* Space between search input and select */
+}
+
+.input-wrapper {
+  position: relative;
+  border: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #888;
+  border: none;
+}
+
+.input-wrapper input {
+  padding-left: 55px; /* Adjust to make space for the icon */
+}
+
+/* Footer styles */
+.footer {
+  background-color: #e7e4e4;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  font-size: 14px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+body.dark-mode .footer {
+  background-color: #383758;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+  }
+
+  .country-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Default grid layout for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column; /* Stack controls vertically */
+    align-items: flex-start; /* Align items to the start */
+    margin-top: 100px; /* Adjust margin to suit small screens */
+    margin-left: 15px; /* Adjust left margin for small screens */
+    margin-right: 15px; /* Adjust right margin for small screens */
+    gap: 20px;
+  }
+
+  .country-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+  }
 }
