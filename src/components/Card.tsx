@@ -1,17 +1,31 @@
-import { Children } from 'react';
+import React from "react";
 
-function Card({ country }) {
+// Define the types for the country object
+interface Country {
+  flag: string;
+  name: string;
+  population: number;
+  region: string;
+  capital: string;
+}
+
+// Add typing for props
+interface CardProps {
+  country: Country;
+}
+
+const Card: React.FC<CardProps> = ({ country }) => {
   return (
     <div className="country-card">
       <img src={country.flag} alt={`${country.name} flag`} />
       <div className="country-header">
-        <h2>{country.name}</h2>
+        <h3>{country.name}</h3>
       </div>
       <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
       <p><strong>Region:</strong> {country.region}</p>
       <p><strong>Capital:</strong> {country.capital}</p>
     </div>
   );
-}
+};
 
 export default Card;

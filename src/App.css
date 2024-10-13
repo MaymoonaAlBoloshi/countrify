@@ -37,17 +37,16 @@ body {
   padding: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
   display: flex;
-  text-align: center; /* Center the header content */
   flex-direction: column;
 }
 
 /* Content inside header */
 .header-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  gap: 870px;
   padding: 5px;
+  padding-left: 50px;
   width: 100%; /* Ensures content takes full width */
   max-width: 1800px; /* Optional: Restrict the width */
 }
@@ -69,7 +68,7 @@ body.dark-mode .header {
   color: black;
   background-color: #ffffff;
   padding: 5px 10px;
-  margin-left: 10px;
+  margin-right: 100px;
   cursor: pointer;
   font-size: 14px;
   border-radius: 5px;
@@ -151,12 +150,44 @@ body.dark-mode input::placeholder {
   justify-items: center; /* Center the single card */
 }
 
+.country-header {
+  font-size: 16px; /* Adjust the size of the header text */
+  font-weight: bold; /* Make the header bold */
+  text-align: left; /* Align the header text to the left */
+  padding: 2px 15px; /* Add some padding for spacing */
+  color: #333; /* Set text color */
+}
+
+.country-header h2 {
+  margin: 2px 0; /* Remove default margin */
+  font-size: inherit; /* Inherit the font size from the parent */
+  padding-left: 10px;
+}
+
+.dark-mode.country-header h2 {
+  color: #ffffff; /* Set text color */
+}
+
+.country-card p {
+  margin: 2px 0; /* Add vertical spacing between paragraphs */
+  font-size: 14px; /* Set a uniform font size for paragraphs */
+  color: #555; /* Set a color for text */
+  padding-left: 10px;
+}
+/* Dark mode styles for paragraphs */
+.dark-mode .country-header {
+  color: #d1d1d1; /* Light color for text in dark mode */
+}
+
+.dark-mode .country-card p{
+  color: #d1d1d1; /* Light color for text in dark mode */
+}
 .country-card {
   background-color: white;
   margin: 10px;
   font-size: 14px;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
   transition: transform 0.3s ease;
   padding-top: 0px;
   padding-bottom: 20px;
@@ -194,11 +225,11 @@ body.dark-mode input::placeholder {
   margin-right: 20px;
   position: relative;
   gap: 820px; /* Space between search input and select */
-  
 }
 
 .input-wrapper {
   position: relative;
+  border: none;
 }
 
 .search-icon {
@@ -207,6 +238,7 @@ body.dark-mode input::placeholder {
   top: 50%;
   transform: translateY(-50%);
   color: #888;
+  border: none;
 }
 
 .input-wrapper input {
@@ -243,7 +275,12 @@ body.dark-mode .footer {
 
 @media (max-width: 768px) {
   .controls {
-    flex-direction: column; /* Stack input and select on small screens */
+    flex-direction: column; /* Stack controls vertically */
+    align-items: flex-start; /* Align items to the start */
+    margin-top: 100px; /* Adjust margin to suit small screens */
+    margin-left: 15px; /* Adjust left margin for small screens */
+    margin-right: 15px; /* Adjust right margin for small screens */
+    gap: 20px;
   }
 
   .country-grid {

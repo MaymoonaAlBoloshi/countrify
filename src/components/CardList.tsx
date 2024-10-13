@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import Card from './Card'; // Import the Card component
+import Card from './Card'; 
 
 const countries = [
   { name: "Germany", code: "DE", population: 81770900, region: "Europe", capital: "Berlin", flag: "https://flagcdn.com/w320/de.png" },
@@ -25,23 +25,25 @@ function CardList() {
   return (
     <>
       <div className="controls">
-        <div className="input-wrapper">
-          <input 
-            type="text" 
-            placeholder="Search for a country..." 
-            onChange={(e) => setSearchTerm(e.target.value)} 
-          />
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
-        </div>
-        <select onChange={(e) => setRegion(e.target.value)}>
-          <option value="All">Filter by Region</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
-      </div>
+  <div className="input-wrapper">
+    <input 
+      type="text" 
+      placeholder="Search for a country..." 
+      onChange={(e) => setSearchTerm(e.target.value)} 
+    />
+    <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+  </div>
+  
+  <div className="filter-wrapper">
+    <select onChange={(e) => setRegion(e.target.value)}>
+      <option value="All">Filter by Region</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+    </select>
+  </div>
+</div>
 
       <main>
         <div className="country-grid">
